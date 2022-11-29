@@ -1,4 +1,4 @@
-# Generic Alarms module
+# Generic Alarm module
 
 This module can be used to create a customized [Monitoring alarm](https://docs.oracle.com/en-us/iaas/Content/Monitoring/Tasks/managingalarms.htm)
 and to be reused by other [alarm modules](../).
