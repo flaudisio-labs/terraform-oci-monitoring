@@ -61,7 +61,7 @@ Thumbs.db
 *.tfstate
 *.tfstate.*
 
-# Lock file
+# Ignore lock files to always test with providers' latest versions
 .terraform.lock.hcl
 
 # Crash log files
