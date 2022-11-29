@@ -1,58 +1,33 @@
-# Terraform Module - OCI - Monitoring
+# OCI Monitoring modules
 
-Terraform module to create Monitoring.
+This repo contains modules for deploying and managing [Monitoring](https://docs.oracle.com/en-us/iaas/Content/Monitoring/Concepts/monitoringoverview.htm) resources:
 
-## Usage
+- [alarms](modules/alarms): a collection of alarms for a variety of metrics (e.g. CPU usage, memory usage, etc.) to be
+  added to VM instances and other resources.
+
+Click on each module above to see its documentation. See the [examples](examples) folder for working usage examples.
+
+## Using a Terraform module
+
+To use a module in your Terraform templates, set the `source` argument to the Git URL of this repo. You should also set
+the `ref` parameter to a specific version, as the `main` branch will occasionally have backward incompatible changes.
+
+For example, to use `v0.5.1` of the `vm-cpu-alarms` module:
 
 ```hcl
-module "monitoring" {
-  source = "git::ssh://git@github.com/fcorp-team/terraform-oci-monitoring.git?ref=v0.0.0"
+module "vm_cpu_alarms" {
+  source = "git::ssh://git@github.com/fcorp-team/terraform-oci-monitoring.git//modules/alarms/vm-cpu-alarms?ref=v0.5.1"
 
-  name = "tf-example-complete"
+  # Inputs for the vm-cpu-alarms module
+  instance_name = "my-instance"
+  instance_id   = "ocid1.instance.oc1.EXAMPLE"
+  # ...
 }
 ```
 
-## Examples
+## Tests
 
-- [Complete](examples/complete/)
-
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Requirements
-
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
-| <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 4.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_null"></a> [null](#provider\_null) | n/a |
-
-## Modules
-
-No modules.
-
-## Resources
-
-| Name | Type |
-|------|------|
-| [null_resource.this](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
-
-## Inputs
-
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | The resource name | `string` | n/a | yes |
-
-## Outputs
-
-| Name | Description |
-|------|-------------|
-| <a name="output_id"></a> [id](#output\_id) | The resource ID |
-| <a name="output_name"></a> [name](#output\_name) | The resource name |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+See the [test](test) folder for details.
 
 ## License
 
