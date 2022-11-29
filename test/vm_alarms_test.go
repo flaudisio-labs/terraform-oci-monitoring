@@ -10,10 +10,10 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestComplete(t *testing.T) {
+func TestVMAlarms(t *testing.T) {
 	t.Parallel()
 
-	workingDir := "../examples/complete"
+	workingDir := "../examples/vm-alarms"
 
 	stage := test_structure.RunTestStage
 
@@ -24,20 +24,14 @@ func TestComplete(t *testing.T) {
 	})
 
 	stage(t, "init", func() {
-		resourceName := fmt.Sprintf("tf-example-complete-%s", random.UniqueId())
-
 		terraformOptions := &terraform.Options{
 			TerraformDir: workingDir,
 
 			Vars: map[string]interface{}{
-				"name": resourceName,
+				"name": fmt.Sprintf("vm-alarms-example-%s", random.UniqueId()),
 			},
 		}
 
-		// Save the generated resource name for later tests
-		test_structure.SaveString(t, workingDir, "resourceName", resourceName)
-
-		// Save Terraform options so future test stages can reuse them
 		test_structure.SaveTerraformOptions(t, workingDir, terraformOptions)
 
 		terraform.Init(t, terraformOptions)
@@ -53,11 +47,19 @@ func TestComplete(t *testing.T) {
 	stage(t, "validate", func() {
 		terraformOptions := test_structure.LoadTerraformOptions(t, workingDir)
 
-		// Load the previously saved resource name
-		expectedResourceName := test_structure.LoadString(t, workingDir, "resourceName")
+		expectedOutputs := []string{
+			"high_cpu_utilization_alarm_id",
+			"high_cpu_utilization_alarm_name",
+			"high_load_average_alarm_id",
+			"high_load_average_alarm_name",
+			"high_memory_utilization_alarm_id",
+			"high_memory_utilization_alarm_name",
+		}
 
-		deployedResourceName := terraform.Output(t, terraformOptions, "name")
+		for _, outputName := range expectedOutputs {
+			_, err := terraform.OutputE(t, terraformOptions, outputName)
 
-		assert.Equal(t, deployedResourceName, expectedResourceName)
+			assert.NoError(t, err, fmt.Sprintf("Expected output not found: %s", outputName))
+		}
 	})
 }
