@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- chore(pre-commit): add tflint and shellcheck hooks
 - refactor(alarms/vm-*-alarms): update alarm names
 - feat: add `alarms/lb-alarms` module
 
