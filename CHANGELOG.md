@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- test: update terratest and testify versions
 - chore(tool-versions): bump Terraform and Go versions
 - chore(pre-commit): add tflint and shellcheck hooks
 - refactor(alarms/vm-*-alarms): update alarm names
