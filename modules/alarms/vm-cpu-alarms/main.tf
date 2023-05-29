@@ -25,17 +25,16 @@ locals {
 module "high_cpu_utilization_alarm" {
   source = "../generic-alarm"
 
-  compartment_id = var.compartment_id
+  compartment_id        = var.compartment_id
+  notification_topic_id = var.notification_topic_id
 
-  display_name = "vm-${var.instance_name}-high-cpu-utilization"
+  display_name = format("%s-vm-high-cpu-utilization", var.instance_name)
   severity     = var.severity
   namespace    = "oci_computeagent"
 
   query = <<-EOF
     CpuUtilization[5m]{resourceId = "${var.instance_id}"}.Mean() > 90
   EOF
-
-  notification_topic_id = var.notification_topic_id
 
   defined_tags = var.defined_tags
 }
@@ -47,17 +46,16 @@ module "high_cpu_utilization_alarm" {
 module "high_load_average_alarm" {
   source = "../generic-alarm"
 
-  compartment_id = var.compartment_id
+  compartment_id        = var.compartment_id
+  notification_topic_id = var.notification_topic_id
 
-  display_name = "vm-${var.instance_name}-high-load-average"
+  display_name = format("%s-vm-high-load-average", var.instance_name)
   severity     = var.severity
   namespace    = "oci_computeagent"
 
   query = <<-EOF
     LoadAverage[5m]{resourceId = "${var.instance_id}"}.Mean() > ${local.instance_vcpus}
   EOF
-
-  notification_topic_id = var.notification_topic_id
 
   defined_tags = var.defined_tags
 }
