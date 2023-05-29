@@ -27,7 +27,7 @@ locals {
   ]
 
   defined_tags = {
-    "fcorp.created-by" = "terraform"
+    "iac.created-by" = "terraform"
   }
 }
 
@@ -67,12 +67,11 @@ resource "oci_ons_notification_topic" "this" {
 module "vm_cpu_alarms" {
   source = "../../modules/alarms/vm-cpu-alarms"
 
-  compartment_id = var.compartment_id
+  compartment_id        = var.compartment_id
+  notification_topic_id = oci_ons_notification_topic.this.id
 
   instance_name = oci_core_instance.this.display_name
   instance_id   = oci_core_instance.this.id
-
-  notification_topic_id = oci_ons_notification_topic.this.id
 
   defined_tags = local.defined_tags
 }
@@ -80,12 +79,11 @@ module "vm_cpu_alarms" {
 module "vm_memory_alarms" {
   source = "../../modules/alarms/vm-memory-alarms"
 
-  compartment_id = var.compartment_id
+  compartment_id        = var.compartment_id
+  notification_topic_id = oci_ons_notification_topic.this.id
 
   instance_name = oci_core_instance.this.display_name
   instance_id   = oci_core_instance.this.id
-
-  notification_topic_id = oci_ons_notification_topic.this.id
 
   defined_tags = local.defined_tags
 }
