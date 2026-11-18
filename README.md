@@ -31,4 +31,4 @@ See the [test](test) folder for details.
 
 ## License
 
-© 2022 FCorp
+[MIT](LICENSE).

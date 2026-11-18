@@ -1,6 +1,7 @@
 [tools]
+git-cliff = "2"
 go = "1.27"
-"pipx:bump2version" = "1"
+"pipx:bump-my-version" = "1"
 prek = "latest"
 shellcheck = "0.11"
 terraform = "1.3"
@@ -22,16 +23,30 @@ dir = "test"
 
 [tasks."bump-version:major"]
 description = "Increment the major version (X.y.z)"
-run = "bump2version major"
+run = "bump-my-version major"
 
 [tasks."bump-version:minor"]
 description = "Increment the minor version (x.Y.z)"
-run = "bump2version minor"
+run = "bump-my-version minor"
 
 [tasks."bump-version:patch"]
 description = "Increment the patch version (x.y.Z)"
-run = "bump2version patch"
+run = "bump-my-version patch"
 
-[tasks.release]
-description = "Push the new project version"
-run = "git push --follow-tags origin main"
+[tasks.git-push]
+description = "Push the current branch and related tags"
+run = "git push --follow-tags origin HEAD"
+
+[tasks.update-changelog]
+description = "Update the project changelog"
+run = """
+  #!/usr/bin/env bash
+  set -eo pipefail
+
+  git-cliff --output CHANGELOG.md
+
+  if [[ "$1" == "--commit" ]] ; then
+    git add -- CHANGELOG.md
+    [[ -n "$( git diff --staged -- CHANGELOG.md )" ]] && git commit -m "docs: update changelog" || true
+  fi
+"""
