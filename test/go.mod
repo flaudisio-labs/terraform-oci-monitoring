@@ -1,4 +1,4 @@
-module github.com/fcorp-team/terraform-oci-monitoring/test
+module github.com/flaudisio-labs/terraform-oci-monitoring/test
 
 go 1.14
 

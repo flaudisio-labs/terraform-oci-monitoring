@@ -9,18 +9,18 @@ and to be reused by other [alarm modules](../).
 - See the [examples](../../../examples) folder for sample usage.
 - See [variables.tf](variables.tf) for all the variables supported by this module.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_oci"></a> [oci](#requirement\_oci) | ~> 4.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="provider_oci"></a> [oci](#provider\_oci) | ~> 4.0 |
 
 ## Modules
@@ -30,13 +30,13 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [oci_monitoring_alarm.this](https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/monitoring_alarm) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | <a name="input_compartment_id"></a> [compartment\_id](#input\_compartment\_id) | The OCID of the compartment to deploy the alarm to | `string` | n/a | yes |
 | <a name="input_display_name"></a> [display\_name](#input\_display\_name) | A user-friendly name for the alarm | `string` | n/a | yes |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | The source service or application emitting the metric that is evaluated by the alarm | `string` | n/a | yes |
@@ -54,7 +54,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | <a name="output_id"></a> [id](#output\_id) | The ID of the alarm |
 | <a name="output_name"></a> [name](#output\_name) | The name of the alarm |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

@@ -16,7 +16,7 @@ For example, to use `v0.5.1` of the `vm-cpu-alarms` module:
 
 ```hcl
 module "vm_cpu_alarms" {
-  source = "git::ssh://git@github.com/fcorp-team/terraform-oci-monitoring.git//modules/alarms/vm-cpu-alarms?ref=v0.5.1"
+  source = "git::ssh://git@github.com/flaudisio-labs/terraform-oci-monitoring.git//modules/alarms/vm-cpu-alarms?ref=v0.5.1"
 
   # Inputs for the vm-cpu-alarms module
   instance_name = "my-instance"
@@ -31,4 +31,4 @@ See the [test](test) folder for details.
 
 ## License
 
-© 2022 FCorp
+[MIT](LICENSE).

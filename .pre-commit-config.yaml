@@ -20,7 +20,9 @@ repos:
     hooks:
       - id: terraform_fmt
       - id: terraform_docs
-        args: [--args=--sort-by=required]
+        args:
+          - --args=--lockfile=false
+          - --args=--sort-by=required
       - id: terraform_tflint
   - repo: https://github.com/gruntwork-io/pre-commit
     rev: 40f924cd642f5dc98d12bd97b07f3752223553da  # frozen: v0.1.30
