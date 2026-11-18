@@ -267,8 +267,8 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,vim,visualstudiocode,intellij,archives,certificates
 
-# Created by https://www.toptal.com/developers/gitignore/api/terraform
-# Edit at https://www.toptal.com/developers/gitignore?templates=terraform
+# Created by https://www.toptal.com/developers/gitignore/api/terraform,terragrunt
+# Edit at https://www.toptal.com/developers/gitignore?templates=terraform,terragrunt
 
 ### Terraform ###
 # Local .terraform directories
@@ -306,4 +306,20 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# End of https://www.toptal.com/developers/gitignore/api/terraform
+### Terragrunt ###
+# terragrunt cache directories
+**/.terragrunt-cache/*
+
+# Terragrunt debug output file (when using `--terragrunt-debug` option)
+# See: https://terragrunt.gruntwork.io/docs/reference/cli-options/#terragrunt-debug
+terragrunt-debug.tfvars.json
+
+# End of https://www.toptal.com/developers/gitignore/api/terraform,terragrunt
+
+# ------------------------------------------------------------------------------
+# CUSTOM
+# ------------------------------------------------------------------------------
+
+### Terratest ###
+
+.test-data
