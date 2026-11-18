@@ -21,17 +21,9 @@ description = "Run tests"
 run = "go test -v -count 1 -timeout ${GO_TEST_TIMEOUT-30m}"
 dir = "test"
 
-[tasks."bump-version:major"]
-description = "Increment the major version (X.y.z)"
-run = "bump-my-version major"
-
-[tasks."bump-version:minor"]
-description = "Increment the minor version (x.Y.z)"
-run = "bump-my-version minor"
-
-[tasks."bump-version:patch"]
-description = "Increment the patch version (x.y.Z)"
-run = "bump-my-version patch"
+[tasks."bump-version"]
+description = "Bump the project version"
+run = "bump-my-version bump --new-version $( git-cliff --bump --bumped-version --output - )"
 
 [tasks.git-push]
 description = "Push the current branch and related tags"
