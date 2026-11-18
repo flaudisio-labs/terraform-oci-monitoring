@@ -9,7 +9,7 @@ and to be reused by other [alarm modules](../).
 - See the [examples](../../../examples) folder for sample usage.
 - See [variables.tf](variables.tf) for all the variables supported by this module.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -57,4 +57,4 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | The ID of the alarm |
 | <a name="output_name"></a> [name](#output\_name) | The name of the alarm |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

@@ -18,7 +18,7 @@ To destroy the provisioned resources:
 $ terraform destroy
 ```
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 No requirements.
@@ -27,7 +27,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_oci"></a> [oci](#provider\_oci) | 4.122.0 |
+| <a name="provider_oci"></a> [oci](#provider\_oci) | n/a |
 
 ## Modules
 
@@ -62,4 +62,4 @@ No requirements.
 | <a name="output_http_5xx_responses_alarm_names"></a> [http\_5xx\_responses\_alarm\_names](#output\_http\_5xx\_responses\_alarm\_names) | The names of the HTTP 5xx responses alarms |
 | <a name="output_unhealthy_backend_servers_alarm_ids"></a> [unhealthy\_backend\_servers\_alarm\_ids](#output\_unhealthy\_backend\_servers\_alarm\_ids) | The IDs of the unhealthy backend servers alarms |
 | <a name="output_unhealthy_backend_servers_alarm_names"></a> [unhealthy\_backend\_servers\_alarm\_names](#output\_unhealthy\_backend\_servers\_alarm\_names) | The names of the unhealthy backend servers alarms |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

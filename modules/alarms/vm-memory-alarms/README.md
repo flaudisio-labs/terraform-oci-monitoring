@@ -8,7 +8,7 @@ This module can be used to create alarms that are fired when the memory usage on
 - See the [examples](../../../examples) folder for sample usage.
 - See [variables.tf](variables.tf) for all the variables supported by this module.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -47,4 +47,4 @@ No resources.
 |------|-------------|
 | <a name="output_high_memory_utilization_alarm_id"></a> [high\_memory\_utilization\_alarm\_id](#output\_high\_memory\_utilization\_alarm\_id) | The ID of the high memory utilization alarm |
 | <a name="output_high_memory_utilization_alarm_name"></a> [high\_memory\_utilization\_alarm\_name](#output\_high\_memory\_utilization\_alarm\_name) | The name of the high memory utilization alarm |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

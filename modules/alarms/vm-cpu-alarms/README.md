@@ -8,7 +8,7 @@ This module can be used to create alarms that are fired when the CPU usage on a 
 - See the [examples](../../../examples) folder for sample usage.
 - See [variables.tf](variables.tf) for all the variables supported by this module.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -54,4 +54,4 @@ This module can be used to create alarms that are fired when the CPU usage on a 
 | <a name="output_high_cpu_utilization_alarm_name"></a> [high\_cpu\_utilization\_alarm\_name](#output\_high\_cpu\_utilization\_alarm\_name) | The name of the high CPU utilization alarm |
 | <a name="output_high_load_average_alarm_id"></a> [high\_load\_average\_alarm\_id](#output\_high\_load\_average\_alarm\_id) | The ID of the high load average alarm |
 | <a name="output_high_load_average_alarm_name"></a> [high\_load\_average\_alarm\_name](#output\_high\_load\_average\_alarm\_name) | The name of the high load average alarm |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->

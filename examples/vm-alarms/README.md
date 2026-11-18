@@ -18,7 +18,7 @@ To destroy the provisioned resources:
 $ terraform destroy
 ```
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 No requirements.
@@ -67,4 +67,4 @@ No requirements.
 | <a name="output_high_load_average_alarm_name"></a> [high\_load\_average\_alarm\_name](#output\_high\_load\_average\_alarm\_name) | The name of the high load average alarm |
 | <a name="output_high_memory_utilization_alarm_id"></a> [high\_memory\_utilization\_alarm\_id](#output\_high\_memory\_utilization\_alarm\_id) | The ID of the high memory utilization alarm |
 | <a name="output_high_memory_utilization_alarm_name"></a> [high\_memory\_utilization\_alarm\_name](#output\_high\_memory\_utilization\_alarm\_name) | The name of the high memory utilization alarm |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
