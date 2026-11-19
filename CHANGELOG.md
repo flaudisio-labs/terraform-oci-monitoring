@@ -4,11 +4,16 @@
 
 ### Documentation
 
+- [agents] Require terraform_docs for README updates
 - Add AGENTS.md
 - Apply terraform-docs updates
 
 ### Miscellaneous
 
+- [test] Bump terratest to 1.0.1 and go to 1.26
+- [mise] Bump terraform to 1.17
+- [deps] Bump OCI provider to ~> 9.0
+- [mise] Use git-cliff for the next version
 - Rename fcorp-team to flaudisio-labs
 - Remove CODEOWNERS and .vscode
 - [gitignore] Add terragrunt rules
