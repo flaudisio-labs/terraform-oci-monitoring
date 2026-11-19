@@ -4,7 +4,7 @@ go = "1.27"
 "pipx:bump-my-version" = "1"
 prek = "latest"
 shellcheck = "0.11"
-terraform = "1.3"
+terraform = "1.17"
 terraform-docs = "0.25"
 tflint = "0.66"
 
