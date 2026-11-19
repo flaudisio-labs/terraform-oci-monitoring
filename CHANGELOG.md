@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Miscellaneous
+
+- [mise] Remove unnecessary quotes
+
 ## v0.3.0 - 2026-11-18
 
 ### Documentation
