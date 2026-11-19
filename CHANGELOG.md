@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.3.0 - 2026-11-18
+
 ### Documentation
 
 - [agents] Require terraform_docs for README updates
