@@ -17,9 +17,11 @@ There is no Makefile and no `pre-commit` command anymore; use the mise tasks.
 
 ## Repo-specific gotchas
 
-- `terraform_docs` runs with `--lockfile=false`. Because the repo has no provider lock files,
-  regenerating the READMEs rewrites the OCI provider version to `n/a`. Commit the regenerated
-  READMEs instead of hand-editing inside the `BEGIN_TF_DOCS`/`END_TF_DOCS` markers.
+- Never hand-edit the module READMEs: `terraform_docs` owns the
+  `BEGIN_TF_DOCS`/`END_TF_DOCS` block. After changing a module's `.tf` files, regenerate the
+  README with the hook (`prek run terraform_docs --all-files`, or `mise run lint`) and commit the
+  result. The hook runs with `--lockfile=false`, so the provider version is read from
+  `required_providers`.
 - `examples/*/provider.tf` and `examples/*/.tflint.hcl` are symlinks into `_common/`. Edit the
   `_common` files, never the symlinks. The provider region is hardcoded to `sa-saopaulo-1`.
 - Examples require `_oci_tenancy_ocid`, `_oci_user_ocid`, `_oci_fingerprint`,
